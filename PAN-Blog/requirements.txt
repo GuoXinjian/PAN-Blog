@@ -1,0 +1,17 @@
+Flask
+Flask-Bootstrap
+Flask-Mail
+Flask-Moment
+Flask-Migrate
+Flask-SQLAlchemy
+Flask-Script
+Flask-WTF
+Jinja2
+Mako
+MarkupSafe
+SQLAlchemy
+WTForms
+Werkzeug
+alembic
+blinker
+itsdangerous

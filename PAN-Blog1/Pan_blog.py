@@ -61,7 +61,7 @@ def send_email(to, subject, template, **kwards):
     return thr
 
 
-@app. route('/',methods=['GET','POST']) 
+@app.route('/',methods=['GET','POST']) 
 def index(): 
 
     form = NameForm() 
@@ -87,7 +87,7 @@ def index():
     return render_template('index.html', form=form,name=session.get('name'),known=session.get('known',False),current_time=datetime.utcnow())
 
 
-@app. route('/user/<name>') 
+@app.route('/user/<name>') 
 def user( name): 
     return render_template('user.html', name= name)
 
