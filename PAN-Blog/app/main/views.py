@@ -1,5 +1,6 @@
 from datetime import datetime
-from flask import render_template, session, redirect, url_for
+from flask import render_template, session, redirect, url_for,send_from_directory
+import os
 
 from . import main 
 from .forms import NameForm
@@ -16,3 +17,8 @@ def index():
                             form=form,name=session.get('name'),
                             known=session.get('known',False),
                             current_time=datetime.utcnow())
+
+
+# @main.route('/favicon.ico')
+# def favicon():
+#     return send_from_directory(os.path.join(main.root_path,'static'),'favicon.ico' , mimetype='imge/vnd.microsoft.icon')
