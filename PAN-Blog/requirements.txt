@@ -10,7 +10,7 @@ Flask-Login
 Jinja2
 Mako
 MarkupSafe
-SQLAlchemy ~> 1.3.0.
+SQLAlchemy
 WTForms
 Werkzeug
 alembic

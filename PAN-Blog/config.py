@@ -13,7 +13,7 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     FLASKY_MAIL_SUBJECT_PREFIX     = '[Pan平底锅]'
     FLASKY_MAIL_SENDER             = 'Pan Admin <follow_wind@126.com>'
-    FLASKY_ADMIN                   = os.environ.get('FLASKY_ADMIN')
+    FLASKY_ADMIN                   = os.environ.get('FLASKY_ADMIN') or 'follow_wind@126.com'
 
     @staticmethod
     def init_app(app):
