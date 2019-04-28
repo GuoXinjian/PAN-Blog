@@ -17,3 +17,7 @@ alembic
 blinker
 itsdangerous
 pymysql
+Forgerypy
+flask-pagedown
+markdown 
+bleach
