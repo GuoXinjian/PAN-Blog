@@ -4,7 +4,7 @@ baseidr = os.path.abspath(os.path.dirname(__file__))
 class Config:
     SECRET_KEY                     = 'hard to guess string'
     MAIL_SERVER                    = 'smtp.126.com'
-    MAIL_PROT                      = 25
+    MAIL_PORT                      = 25
     MAIL_USE_TLS                   = True
     MAIL_USE_SSL                   = False
     MAIL_USERNAME                  = 'follow_wind@126.com' #os.environ.get('MAIL_USERNAME')
@@ -13,8 +13,8 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES      = True
     FLASKY_MAIL_SUBJECT_PREFIX     = '[Pan平底锅]'
-    FLASKY_MAIL_SENDER             = 'Pan Admin <follow_wind@126.com>'
-    FLASKY_ADMIN                   = os.environ.get('FLASKY_ADMIN') or 'follow_wind@126.com'
+    FLASKY_MAIL_SENDER             = 'follow_wind@126.com'
+    FLASKY_ADMIN                   = 'follow_wind@126.com'
     FLASKY_POSTS_PER_PAGE          = 20
     FLASKY_FOLLOWERS_PER_PAGE      = 50
     FLASKY_COMMENTS_PER_PAGE       = 30
@@ -26,8 +26,8 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG                          = True
-    # SQLALCHEMY_DATABASE_URI        = os.environ.get('DEV_DATABASE_URL') or "mysql+pymysql://root:guo3625202123@132.232.77.200:3306/Pan-blog?charset=utf8mb4"
-    SQLALCHEMY_DATABASE_URI        = os.environ.get('DEV_DATABASE_URL') or "mysql+pymysql://root:guo3625202123@localhost:3306/Pan-blog?charset=utf8mb4"
+    SQLALCHEMY_DATABASE_URI        = os.environ.get('DEV_DATABASE_URL') or "mysql+pymysql://root:guo3625202123@132.232.77.200:3306/Pan-blog?charset=utf8mb4"
+    # SQLALCHEMY_DATABASE_URI        = os.environ.get('DEV_DATABASE_URL') or "mysql+pymysql://root:guo3625202123@localhost:3306/Pan-blog?charset=utf8mb4"
 
     
 class TestingConfig(Config):
@@ -37,8 +37,8 @@ class TestingConfig(Config):
     WTF_CSRF_ENABLED = False
     
 class ProductionConfig(Config):
-    # SQLALCHEMY_DATABASE_URI        = os.environ.get('DATABASE_URL') or "mysql+pymysql://root:guo3625202123@132.232.77.200:3306/Pan-blog?charset=utf8mb4"
-    SQLALCHEMY_DATABASE_URI        = os.environ.get('DATABASE_URL') or "mysql+pymysql://root:guo3625202123@localhost:3306/Pan-blog?charset=utf8mb4"
+    SQLALCHEMY_DATABASE_URI        = os.environ.get('DATABASE_URL') or "mysql+pymysql://root:guo3625202123@132.232.77.200:3306/Pan-blog?charset=utf8mb4"
+    # SQLALCHEMY_DATABASE_URI        = os.environ.get('DATABASE_URL') or "mysql+pymysql://root:guo3625202123@localhost:3306/Pan-blog?charset=utf8mb4"
     @classmethod
     def init_app(cls, app):
         Config.init_app(app)
